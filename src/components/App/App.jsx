@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { GlobalStyle } from 'components/GlobalStyle';
-import { Container, Title } from './App.styled';
 import { Section } from 'components/Section';
 import { FeedbackOptions } from 'components/FeedbackOptions';
 import { Statistics } from 'components/Statistics';
 import { Notification } from 'components/Notification';
+import * as S from './App.styled';
 
 export class App extends Component {
   state = {
@@ -17,15 +17,15 @@ export class App extends Component {
     this.setState(prevState => ({ [option]: prevState[option] + 1 }));
   };
 
-  countTotalFeedback = () => {
+  countTotalFeedback() {
     const { good, neutral, bad } = this.state;
     return good + neutral + bad;
-  };
+  }
 
-  countPositiveFeedbackPercentage = total => {
+  countPositiveFeedbackPercentage(total) {
     const { good } = this.state;
     return Math.round((good * 100) / total);
-  };
+  }
 
   render() {
     const { good, neutral, bad } = this.state;
@@ -35,9 +35,9 @@ export class App extends Component {
       this.countPositiveFeedbackPercentage(totalFeedback);
 
     return (
-      <Container>
+      <S.Container>
         <GlobalStyle />
-        <Title>Feedback App</Title>
+        <S.Title>Feedback App</S.Title>
 
         <Section title="Please leave feedback">
           <FeedbackOptions
@@ -59,7 +59,7 @@ export class App extends Component {
             <Notification message={'There is no feedback'} />
           )}
         </Section>
-      </Container>
+      </S.Container>
     );
   }
 }

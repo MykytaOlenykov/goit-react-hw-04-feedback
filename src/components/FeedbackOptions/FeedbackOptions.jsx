@@ -1,21 +1,21 @@
 import PropTypes from 'prop-types';
 import { toCapitalLetter } from 'utils';
-import { ListButton, Button } from './FeedbackOptions.styled';
+import * as S from './FeedbackOptions.styled';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => (
-  <ListButton>
+  <S.ListButton>
     {options.map(option => {
       const optionLabel = toCapitalLetter(option);
 
       return (
         <li key={option}>
-          <Button type="button" onClick={() => onLeaveFeedback(option)}>
+          <S.Button type="button" onClick={() => onLeaveFeedback(option)}>
             {optionLabel}
-          </Button>
+          </S.Button>
         </li>
       );
     })}
-  </ListButton>
+  </S.ListButton>
 );
 
 FeedbackOptions.propTypes = {
