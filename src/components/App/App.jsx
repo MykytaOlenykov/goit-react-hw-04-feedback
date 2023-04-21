@@ -11,6 +11,8 @@ export const App = () => {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
+  const options = Object.keys({ good, neutral, bad });
+
   const handleLeaveFeedback = option => {
     switch (option) {
       case 'good':
@@ -35,7 +37,6 @@ export const App = () => {
     return Math.round((good * 100) / total);
   };
 
-  const options = Object.keys({ good, neutral, bad });
   const totalFeedback = countTotalFeedback();
   const positiveFeedback = countPositiveFeedbackPercentage(totalFeedback);
 
