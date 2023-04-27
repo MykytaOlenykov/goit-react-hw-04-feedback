@@ -21,7 +21,7 @@ export const Button = styled.button`
   transition: background-color
     ${({ theme }) => `${theme.duration} ${theme.timingFunction}`};
 
-  :hover {
+  &:hover {
     background-color: ${({ theme }) => theme.colors.secondaryBg};
   }
 `;

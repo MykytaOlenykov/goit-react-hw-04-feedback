@@ -4,7 +4,7 @@ export const Container = styled.div`
   padding: 20px;
   max-width: 300px;
 
-  section:not(:last-child) {
+  & section:not(:last-child) {
     margin-bottom: 12px;
   }
 `;
