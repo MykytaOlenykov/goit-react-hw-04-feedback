@@ -38,7 +38,8 @@ export const App = () => {
   };
 
   const totalFeedback = countTotalFeedback();
-  const positiveFeedback = countPositiveFeedbackPercentage(totalFeedback);
+  const positiveFeedbackPercentage =
+    countPositiveFeedbackPercentage(totalFeedback);
 
   return (
     <S.Container>
@@ -59,7 +60,7 @@ export const App = () => {
             neutral={neutral}
             bad={bad}
             total={totalFeedback}
-            positivePercentage={positiveFeedback}
+            positivePercentage={positiveFeedbackPercentage}
           />
         ) : (
           <Notification message={'There is no feedback'} />
